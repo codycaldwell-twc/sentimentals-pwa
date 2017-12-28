@@ -21,7 +21,21 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.dashboard {
+  display: flex;
+  flex: column;
+  justify-content: space-around;
+  margin-top: 30px;
+
+}
+
+.dashboard-text {
+  resize: none;
+  outline: none;
+}
+
+.dashboard-result {
+  resize: none;
+  outline: none;
+  border: none;
 }
