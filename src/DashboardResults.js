@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './styles.css';
 
-export const DashboardResults = () => (
+export const DashboardResults = ({ analysis }) => (
   <textarea
     className="dashboard-result"
     rows="15"
@@ -9,5 +10,9 @@ export const DashboardResults = () => (
     placeholder="This is the result"
   />
 );
+
+DashboardResults.propTypes = {
+  analysis: PropTypes.object
+};
 
 export default DashboardResults;
