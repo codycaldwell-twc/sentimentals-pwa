@@ -3,11 +3,17 @@ import './styles.css';
 
 const DashboardControls = ({ analyze }) => (
   <div className='dashboard-controls'>
-    <input type='button' onClick={analyze} value='Analyze'/>
-    <input type='button' onClick={analyze} value='Clear Analysis'/>
+    <div className='btn btn-primary' onClick={analyze}>Analyze</div>
+    <div className='btn btn-primary' onClick={analyze}>Clear Analysis</div>
     <label>
-      <input type='checkbox' id='sentence-level-checkbox' />
-      Sentence-Level Analysis
+      <div className="input-group mb-3">
+        <div className="input-group-prepend">
+          <div className="input-group-text">
+            <input type="checkbox" />
+            Sentence-Level Analysis
+          </div>
+        </div>
+      </div>
     </label>
   </div>
 );
