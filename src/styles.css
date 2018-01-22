@@ -34,6 +34,10 @@
   outline: none;
 }
 
+.dashboard-controls .btn {
+  width: 150px;
+}
+
 .dashboard-result {
   resize: none;
   outline: none;

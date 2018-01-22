@@ -1,27 +1,33 @@
 import React, { Component } from 'react';
 import { Panel } from 'react-bootstrap';
+import range from 'lodash/range';
 import './styles.css';
 
 class ProfileDocumentInputList extends Component {
   render() {
     return (
-      <div className='profile-document-container'>
-        <div>Profile Text</div>
-        <div style={{overflowY:'scroll', height:'400px'}}>
+      <div className='document-container'>
+        <div className='document-container-header'>
+          <div className='document-container-title'>Profile Text</div>
+          <div className="icon icon-plus"></div>
+        </div>
+        <div className='document-container-input' style={{overflowY:'scroll', height:'400px'}}>
           {
-            [1,2,3,4,5,6,7].map(data => (
+            range(10).map(data => (
               <Panel key={data} id="collapsible-panel-example-3">
                 <Panel.Heading>
                   <Panel.Title toggle>
-                    Title that functions as a collapse toggle
+                    {`Profile Example #${data}`}
                   </Panel.Title>
                 </Panel.Heading>
                 <Panel.Collapse>
                   <Panel.Body>
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life
-                    accusamus terry richardson ad squid. Nihil anim keffiyeh
-                    helvetica, craft beer labore wes anderson cred nesciunt sapiente
-                    ea proident.
+                    <textarea className='document-input-area'>
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life
+                      accusamus terry richardson ad squid. Nihil anim keffiyeh
+                      helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                      ea proident.
+                    </textarea>
                   </Panel.Body>
                 </Panel.Collapse>
               </Panel>
