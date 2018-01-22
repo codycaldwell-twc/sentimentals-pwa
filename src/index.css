@@ -3,3 +3,32 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.dashboard {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0px 15%;
+}
+
+.dashboard-input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-controls {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: auto 0;
+}
+
+.dashboard-controls input {
+  outline: none;
+}
+
+.dashboard-controls input:hover {
+  cursor: pointer;
+}
+
+.dashboard-controls label {
+  user-select: none;
+}
