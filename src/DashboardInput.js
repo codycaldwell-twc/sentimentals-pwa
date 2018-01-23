@@ -5,11 +5,18 @@ import NewDocumentInput from './NewDocumentInput';
 import DashboardControls from './DashboardControls';
 import './styles.css';
 
-const DashboardInput = ({ profiles, newDocument, addProfileDocument, updateNewDocument }) => (
+const DashboardInput = ({
+  profiles,
+  newDocument,
+  addProfileDocument,
+  updateNewDocument,
+  updateProfileDocument,
+}) => (
   <div className='dashboard-input'>
     <ProfileDocumentInputList
       profiles={profiles}
       addProfileDocument={addProfileDocument}
+      updateProfileDocument={updateProfileDocument}
     />
     <NewDocumentInput
       newDocument={newDocument}
@@ -24,6 +31,7 @@ DashboardInput.propTypes = {
   newDocument: PropTypes.string,
   addProfileDocument: PropTypes.func,
   updateNewDocument: PropTypes.func,
+  updateProfileDocument: PropTypes.func,
 };
 
 export default DashboardInput;

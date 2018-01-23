@@ -10,6 +10,11 @@ export const updateNewDocument = (payload) => ({
   payload
 });
 
+export const updateProfileDocument = (payload) => ({
+  type: constants.UPDATE_PROFILE_DOCUMENT,
+  payload
+});
+
 export const submitAnalysis = (payload) => ({
   type: constants.SUBMIT_ANALYSIS,
   payload

@@ -15,7 +15,7 @@ export default function (state = initialState, action) {
         ...state,
         profiles: [
           ...state.profiles,
-          action.payload
+          ''
         ]
       };
     case constants.UPDATE_NEW_DOCUMENT:
@@ -23,6 +23,15 @@ export default function (state = initialState, action) {
       return {
         ...state,
         newDocument: action.payload,
+      };
+    case constants.UPDATE_PROFILE_DOCUMENT:
+    console.log('UPDATE_PROFILE_DOCUMENT');
+      const newProfiles = [...state.profiles];
+      const { value, index } = action.payload;
+      newProfiles[index] = value;
+      return {
+        ...state,
+        profiles: [...newProfiles]
       };
     case constants.CLEAR_ANALYSIS:
     console.log('CLEAR_ANALYSIS');

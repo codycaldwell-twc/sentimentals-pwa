@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import DashboardInput from './DashboardInput';
 import DashboardResults from './DashboardResults';
-import { addProfileDocument, updateNewDocument } from './actions';
+import {
+  addProfileDocument,
+  updateNewDocument,
+  updateProfileDocument,
+} from './actions';
 import {
   profilesSelector,
   newDocumentSelector,
@@ -18,6 +22,7 @@ const Dashboard = ({
   analysis,
   addProfileDocument,
   updateNewDocument,
+  updateProfileDocument,
 }) => {
   return (
     <div className="dashboard">
@@ -26,6 +31,7 @@ const Dashboard = ({
         newDocument={newDocument}
         addProfileDocument={addProfileDocument}
         updateNewDocument={updateNewDocument}
+        updateProfileDocument={updateProfileDocument}
       />
       <DashboardResults analysis={analysis} />
     </div>
@@ -38,6 +44,7 @@ Dashboard.propTypes = {
   analysis: PropTypes.object,
   addProfileDocument: PropTypes.func,
   updateNewDocument: PropTypes.func,
+  updateProfileDocument: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({
@@ -46,7 +53,11 @@ const mapStateToProps = (state) => ({
   analysis: analysisSelector(state),
 })
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({ addProfileDocument, updateNewDocument }, dispatch)
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  addProfileDocument,
+  updateNewDocument,
+  updateProfileDocument,
+}, dispatch)
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

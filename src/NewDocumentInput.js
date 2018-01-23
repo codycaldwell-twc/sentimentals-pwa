@@ -17,7 +17,7 @@ class NewDocumentInput extends Component {
         <div className='document-container-header'>
           <div className='document-container-title'>New Text</div>
         </div>
-        <div className='document-container-input' style={{overflowY:'scroll', maxHeight:'400px'}}>
+        <div className='document-container-input'>
           <textarea
             className='document-input-area'
             value={newDocument}

@@ -13,6 +13,7 @@ body {
 .dashboard-input {
   display: flex;
   justify-content: space-between;
+  margin-top: 40px;
 }
 
 .dashboard-controls {
@@ -54,6 +55,9 @@ body {
 .document-container-input {
   border: 1px solid #ededed;
   padding: 10px;
+  overflow-y: scroll;
+  max-height: 400px;
+  min-height: 100px;
 }
 
 .document-container-header {
@@ -73,7 +77,7 @@ body {
 
 .document-input-area {
   width: 100%;
-  height: 100px;
+  min-height: 70px;
   outline: none;
   border: none;
   resize: vertical;
