@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Panel } from 'react-bootstrap';
 import './styles.css';
 
 class NewDocumentInput extends Component {
@@ -19,7 +18,7 @@ class NewDocumentInput extends Component {
         </div>
         <div className='document-container-input'>
           <textarea
-            className='document-input-area'
+            className='document-input-area new-document'
             value={newDocument}
             onChange={this.handleChange}
           >

@@ -40,6 +40,12 @@ body {
   margin: 10px;
 }
 
+.dashboard_results {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
 .panel-body {
   padding: 0px;
 }
@@ -57,7 +63,7 @@ body {
   padding: 10px;
   overflow-y: scroll;
   max-height: 400px;
-  min-height: 100px;
+  min-height: 70px;
 }
 
 .document-container-header {
@@ -82,6 +88,14 @@ body {
   border: none;
   resize: vertical;
   max-height: 400px;
+}
+
+.new-document {
+  height: 270px;
+}
+
+.profile-container {
+  height: 300px;
 }
 
 .icon {

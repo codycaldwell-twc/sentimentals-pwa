@@ -18,7 +18,7 @@ class ProfileDocumentInputList extends Component {
           <div className='document-container-title'>Profile Text</div>
           <div className="icon icon-plus" onClick={addProfileDocument}></div>
         </div>
-        <div className='document-container-input'>
+        <div className='document-container-input profile-container'>
           {
             profiles.map((value, i) => (
               <Panel key={`profile_document_${i}`} id="collapsible-panel-example-3">
