@@ -10,5 +10,16 @@ export const newDocumentSelector = (state) =>
 export const analysisSelector = (state) =>
   get(state, [constants.ANALYSIS_REDUCER, 'analysis'])
 
-export const enableSentenceLevelSelector = (state) =>
-  get(state, [constants.ANALYSIS_REDUCER, 'enableSentenceLevelAnaylsis'])
+export const documentSelector = (state) =>
+  get(state, [constants.ANALYSIS_REDUCER, 'analysis', 'document'], [])
+
+export const documentTonesSelector = (state) =>
+  get(state, [constants.ANALYSIS_REDUCER, 'analysis', 'document', 'tones'], [])
+
+export const documentAverageSelector = (state) =>
+  get(state, [constants.ANALYSIS_REDUCER, 'analysis', 'document', 'average'], [])
+
+export const sentencesSelector = (state) => {
+  const sentences = get(state, [constants.ANALYSIS_REDUCER, 'analysis', 'sentences'], []);
+  return JSON.stringify(sentences) === '{}' ? [] : sentences;
+}

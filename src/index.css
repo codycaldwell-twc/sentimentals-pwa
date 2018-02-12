@@ -1,3 +1,5 @@
+@import '~antd/dist/antd.css';
+
 body {
   margin: 0;
   padding: 0;
@@ -7,7 +9,7 @@ body {
 .dashboard {
   display: flex;
   flex-flow: column nowrap;
-  margin: 0px 10%;
+  margin: 20px 10%;
 }
 
 .dashboard-input {
@@ -40,10 +42,14 @@ body {
   margin: 10px;
 }
 
-.dashboard_results {
+.dashboard-results {
+  width: 60%;
+  margin: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  padding: 10px;
+  align-items: center;
+  padding: 45px;
 }
 
 .panel-body {
@@ -52,6 +58,9 @@ body {
 
 .document-container {
   width: 40%;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.14);
+  border-radius: 3px;
 }
 
 .document-container-title {
@@ -59,18 +68,20 @@ body {
 }
 
 .document-container-input {
-  border: 1px solid #ededed;
-  padding: 10px;
   overflow-y: scroll;
-  max-height: 400px;
-  min-height: 70px;
+  padding: 10px 20px;
+  height: 90%;
 }
 
 .document-container-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 5px;
+  margin: -20px 15px 0;
+  padding: 14px;
+  box-shadow: 0 12px 20px -10px rgba(76, 175, 80, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(76, 175, 80, 0.2);
+  background: linear-gradient(60deg, #2BABE1, #2BABEF);
+  color: white;
 }
 
 .document-container-header .icon {
@@ -90,12 +101,9 @@ body {
   max-height: 400px;
 }
 
-.new-document {
-  height: 270px;
-}
-
 .profile-container {
-  height: 300px;
+  height: 500px;
+  border: none;
 }
 
 .icon {
@@ -105,7 +113,7 @@ body {
 }
 
 .icon-plus {
-  background-color: black;
+  background-color: #00374F;
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -134,4 +142,41 @@ body {
   top:4px;
   left: 8px;
   content:"";
+}
+
+.new-document {
+  height: 100%;
+  resize: none;
+}
+
+.no-results {
+  font-size: 1.5em;
+}
+
+.results-container {
+  margin: 20px;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.14);
+  border-radius: 3px;
+  width: 100%;
+}
+
+.results-container-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -20px 15px 0 !important;
+  padding: 14px;
+  box-shadow: 0 12px 20px -10px rgba(76, 175, 80, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(76, 175, 80, 0.2);
+  background: linear-gradient(60deg, #2BABE1, #2BABEF);
+  color: white;
+}
+
+.results-container-title {
+  font-size: 1.5em;
+}
+
+.sentence-results {
+  padding: 20px;
+  text-align: left;
 }

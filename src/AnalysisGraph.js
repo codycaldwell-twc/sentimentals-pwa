@@ -14,26 +14,44 @@ class AnalysisGraph extends Component {
      this.createBarChart()
   }
 
+  getBackgroundColor = (tone) => {
+    const colorMap = {
+      anger: '#DB3650',
+      disgust: '#00A594',
+      fear: '#67338B',
+      joy: '#FDD448',
+      sadness: '#007AAB',
+      analytical: '#E05A36',
+      confident: '#DA3560',
+      tentative: '#6C63A5',
+      openness_big5: '#E8863B',
+      conscientiousness_big5: '#78338B',
+      extraversion_big5: '#00ABE9',
+      agreeableness_big5: '#98216D',
+      emotional_range_big5: 'pink'
+    };
+    return colorMap[tone];
+  }
+
   shouldComponentUpdate(nextProps) {
     const { analysis } = this.props;
     return !isEqual(analysis, nextProps.analysis);
   }
 
-
-
   createBarChart() {
     const { height, width, analysis } = this.props;
 
     const node = this.node;
+    d3.select(node).selectAll("*").remove()
 
     const tones = get(analysis, ['document', 'tones'], {});
     const data = Object.keys(tones).map(key => ({
       value: tones[key],
       name: key,
-      color: `#${(Math.random()*0xFFFFFF<<0).toString(16)}`
+      color: this.getBackgroundColor(key)
     }));
 
-    const margin = { top: 20, right: 30, bottom: 40, left: 30 };
+    const margin = { top: 20, right: 30, bottom: 60, left: 30 };
     const chartWidth = width - margin.left - margin.right;
     const chartHeight = height - margin.top - margin.bottom;
 
@@ -51,16 +69,20 @@ class AnalysisGraph extends Component {
       .scale(y)
       .tickSize([6, 0]);
 
-    d3.select(node)
-      .attr('width', chartWidth + margin.left + margin.right)
-      .attr('height', chartHeight + margin.top + margin.bottom)
+    const group = d3.select(node)
+      .attr('width', width + margin.left + margin.right)
+      .attr('height', height)
       .append('g')
-      .attr('transform', `translate(${margin.left},${margin.top})`);
+      .attr('transform', `translate(${margin.left + margin.right},${margin.top})`)
+      .attr('width', width - margin.left - margin.right)
+      .attr('height', height - margin.top - margin.bottom)
 
-    x.domain(d3.extent(data.map(d => d.value))).nice();
+    const max = Math.max(...data.map(d => Math.abs(d.value)));
+
+    x.domain(d3.extent([-max, max])).nice();
     y.domain(data.map(d => d.name));
 
-    d3.select(node).selectAll(".bar")
+    group.selectAll(".bar")
       .data(data)
       .enter()
       .append("rect")
@@ -70,13 +92,13 @@ class AnalysisGraph extends Component {
       .attr("height", y.bandwidth())
       .attr("fill", d => d.color)
       .exit()
-      .remove()
+      .remove();
 
-    d3.select(node).append("g")
+    group.append("g")
       .attr("transform", `translate(0,${chartHeight})`)
       .call(xAxis)
 
-    const ticks = d3.select(node).append("g")
+    const ticks = group.append("g")
       .attr("transform", `translate(${x(0)},0)`)
       .call(yAxis)
       .selectAll('.tick')

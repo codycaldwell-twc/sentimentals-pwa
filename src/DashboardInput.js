@@ -11,6 +11,7 @@ const DashboardInput = ({
   addProfileDocument,
   updateNewDocument,
   updateProfileDocument,
+  sentences,
 }) => (
   <div className='dashboard-input'>
     <ProfileDocumentInputList
@@ -21,6 +22,7 @@ const DashboardInput = ({
     <NewDocumentInput
       newDocument={newDocument}
       updateNewDocument={updateNewDocument}
+      sentences={sentences}
     />
     <DashboardControls />
   </div>

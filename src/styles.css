@@ -1,3 +1,8 @@
+#root {
+  background-color: #EEE;
+  height: 100vh;
+}
+
 .App {
   text-align: center;
 }
@@ -7,26 +12,20 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: #00374F;
+  height: auto;
   padding: 20px;
   color: white;
 }
 
 .App-title {
   font-size: 1.5em;
+  margin: 0;
+  color: white;
 }
 
 .App-intro {
   font-size: large;
-}
-
-.dashboard {
-  display: flex;
-  flex: column;
-  justify-content: space-around;
-  margin-top: 30px;
-
 }
 
 .dashboard-text {
@@ -42,4 +41,21 @@
   resize: none;
   outline: none;
   border: none;
+}
+
+.ant-collapse {
+  margin: 16px !important;
+}
+
+button.ant-btn.ant-btn-primary {
+  margin: 10px;
+  background: linear-gradient(60deg, #2BABE1, #2BABEF);
+  border: none;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.14);
+  height: 45px;
+}
+
+.ant-collapse-content > .ant-collapse-content-box {
+  padding-top: 16px;
+  padding-bottom: 10px !important;
 }

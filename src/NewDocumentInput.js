@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import get from 'lodash/get';
 import './styles.css';
 
 class NewDocumentInput extends Component {

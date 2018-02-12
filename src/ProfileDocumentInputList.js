@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Panel } from 'react-bootstrap';
+import { Collapse } from 'antd';
 import './styles.css';
 
 class ProfileDocumentInputList extends Component {
@@ -21,23 +21,15 @@ class ProfileDocumentInputList extends Component {
         <div className='document-container-input profile-container'>
           {
             profiles.map((value, i) => (
-              <Panel key={`profile_document_${i}`} id="collapsible-panel-example-3">
-                <Panel.Heading>
-                  <Panel.Title toggle>
-                    {`Example #${i}`}
-                  </Panel.Title>
-                </Panel.Heading>
-                <Panel.Collapse>
-                  <Panel.Body>
-                    <textarea
-                      className='document-input-area'
-                      value={value}
-                      onChange={(e) => this.handleChange(e, i)}
-                    >
-                    </textarea>
-                  </Panel.Body>
-                </Panel.Collapse>
-              </Panel>
+              <Collapse>
+                <Collapse.Panel header={`Example #${i}`}>
+                  <textarea
+                    className='document-input-area'
+                    value={value}
+                    onChange={(e) => this.handleChange(e, i)}
+                  />
+                </Collapse.Panel>
+              </Collapse>
             ))
           }
         </div>
