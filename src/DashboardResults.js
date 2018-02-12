@@ -59,28 +59,31 @@ class DashboardResults extends Component {
           </div>
         </div>
         <br />
-        <div className='results-container'>
-          <div className='results-container-header'>
-            <div className='results-container-title'>Sentence Level Analysis</div>
+        {
+          isEmpty(sentences) ? null :
+          <div className='results-container'>
+            <div className='results-container-header'>
+              <div className='results-container-title'>Sentence Level Analysis</div>
+            </div>
+            <div className='sentence-results'>
+              {
+                sentences.map((sentence, i) => (
+                  <Highlighter
+                    key={i}
+                    highlightClassName={this.getBackgroundColor(sentence)}
+                    searchWords={[sentence.text]}
+                    autoEscape={true}
+                    highlightStyle={{
+                      backgroundColor: this.getBackgroundColor(sentence),
+                      color: 'white',
+                    }}
+                    textToHighlight={sentence.text}
+                  />
+                ))
+              }
+            </div>
           </div>
-          <div className='sentence-results'>
-            {
-              sentences.map((sentence, i) => (
-                <Highlighter
-                  key={i}
-                  highlightClassName={this.getBackgroundColor(sentence)}
-                  searchWords={[sentence.text]}
-                  autoEscape={true}
-                  highlightStyle={{
-                    backgroundColor: this.getBackgroundColor(sentence),
-                    color: 'white',
-                  }}
-                  textToHighlight={sentence.text}
-                />
-              ))
-            }
-          </div>
-        </div>
+        }
       </div>
       : <EmptyResult />
     );
