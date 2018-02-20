@@ -4,7 +4,8 @@ export const initialState = {
   profiles: [],
   newDocument: '',
   analysis: undefined,
-  enableSentenceLevelAnaylsis: false
+  enableSentenceLevelAnaylsis: false,
+  toneCategories: constants.DEFAULT_TONE_CATEGORIES,
 };
 
 export default function (state = initialState, action) {
@@ -38,6 +39,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         enableSentenceLevelAnaylsis: !state.enableSentenceLevelAnaylsis
+      };
+    case constants.SET_TONE_CATEGORIES:
+      return {
+        ...state,
+        toneCategories: action.payload
       };
     case constants.ANALYSIS_SUCCESS:
       return {

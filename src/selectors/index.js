@@ -19,6 +19,9 @@ export const documentTonesSelector = (state) =>
 export const documentAverageSelector = (state) =>
   get(state, [constants.ANALYSIS_REDUCER, 'analysis', 'document', 'average'], [])
 
+export const toneCategoriesSelector = (state) =>
+  get(state, [constants.ANALYSIS_REDUCER, 'toneCategories'], [])
+
 export const sentencesSelector = (state) => {
   const sentences = get(state, [constants.ANALYSIS_REDUCER, 'analysis', 'sentences'], []);
   return JSON.stringify(sentences) === '{}' ? [] : sentences;

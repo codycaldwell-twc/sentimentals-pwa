@@ -29,3 +29,8 @@ export const toggleSentenceLevel = (payload) => ({
   type: constants.TOGGLE_SENTENCE_LEVEL_ANALYSIS,
   payload
 });
+
+export const setToneCategories = (payload) => ({
+  type: constants.SET_TONE_CATEGORIES,
+  payload
+});

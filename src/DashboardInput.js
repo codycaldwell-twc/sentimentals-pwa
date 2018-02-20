@@ -12,6 +12,8 @@ const DashboardInput = ({
   updateNewDocument,
   updateProfileDocument,
   sentences,
+  toneCategories,
+  analyzeDisabled,
 }) => (
   <div className='dashboard-input'>
     <ProfileDocumentInputList
@@ -24,7 +26,7 @@ const DashboardInput = ({
       updateNewDocument={updateNewDocument}
       sentences={sentences}
     />
-    <DashboardControls />
+    <DashboardControls toneCategories={toneCategories} analyzeDisabled={analyzeDisabled} />
   </div>
 );
 
@@ -34,6 +36,9 @@ DashboardInput.propTypes = {
   addProfileDocument: PropTypes.func,
   updateNewDocument: PropTypes.func,
   updateProfileDocument: PropTypes.func,
+  sentences: PropTypes.array,
+  toneCategories: PropTypes.array,
+  analyzeDisabled: PropTypes.bool,
 };
 
 export default DashboardInput;

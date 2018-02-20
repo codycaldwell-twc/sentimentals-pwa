@@ -6,4 +6,6 @@ export const ANALYSIS_SUCCESS = 'ANALYSIS_SUCCESS';
 export const ANALYSIS_FAILURE = 'ANALYSIS_FAILURE';
 export const CLEAR_ANALYSIS = 'CLEAR_ANALYSIS';
 export const TOGGLE_SENTENCE_LEVEL_ANALYSIS = 'TOGGLE_SENTENCE_LEVEL_ANALYSIS';
+export const SET_TONE_CATEGORIES = 'SET_TONE_CATEGORIES';
 export const ANALYSIS_REDUCER = 'analysisReducer';
+export const DEFAULT_TONE_CATEGORIES = ['Emotion tone', 'Language tone', 'Social tone'];

@@ -13,6 +13,7 @@ import {
   newDocumentSelector,
   analysisSelector,
   sentencesSelector,
+  toneCategoriesSelector,
 } from './selectors';
 import './styles.css';
 
@@ -21,6 +22,8 @@ const Dashboard = ({
   newDocument,
   analysis,
   sentences,
+  toneCategories,
+  analyzeDisabled,
   addProfileDocument,
   updateNewDocument,
   updateProfileDocument,
@@ -34,6 +37,8 @@ const Dashboard = ({
         updateNewDocument={updateNewDocument}
         updateProfileDocument={updateProfileDocument}
         sentences={sentences}
+        toneCategories={toneCategories}
+        analyzeDisabled={toneCategories && toneCategories.length === 0}
       />
     </div>
   )
@@ -43,7 +48,8 @@ Dashboard.propTypes = {
   profiles: PropTypes.array,
   newDocument: PropTypes.string,
   analysis: PropTypes.object,
-  sentences: PropTypes.object,
+  sentences: PropTypes.array,
+  toneCategories: PropTypes.array,
   addProfileDocument: PropTypes.func,
   updateNewDocument: PropTypes.func,
   updateProfileDocument: PropTypes.func,
@@ -54,6 +60,7 @@ const mapStateToProps = (state) => ({
   newDocument: newDocumentSelector(state),
   analysis: analysisSelector(state),
   sentences: sentencesSelector(state),
+  toneCategories: toneCategoriesSelector(state),
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({

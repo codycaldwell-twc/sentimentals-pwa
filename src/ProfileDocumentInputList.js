@@ -21,7 +21,7 @@ class ProfileDocumentInputList extends Component {
         <div className='document-container-input profile-container'>
           {
             profiles.map((value, i) => (
-              <Collapse>
+              <Collapse key={`profile_${i}`}>
                 <Collapse.Panel header={`Example #${i}`}>
                   <textarea
                     className='document-input-area'

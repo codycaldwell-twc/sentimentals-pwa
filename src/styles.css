@@ -59,3 +59,13 @@ button.ant-btn.ant-btn-primary {
   padding-top: 16px;
   padding-bottom: 10px !important;
 }
+
+.ant-checkbox-group {
+  display: flex !important;
+  flex-flow: column nowrap !important;
+  align-items: left !important;
+}
+
+.ant-checkbox-group-item {
+  margin-left: 0px !important;
+}
